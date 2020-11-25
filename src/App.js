@@ -11,17 +11,17 @@ function App() {
   const [todos, setTodo] = useState([
     {
       id: uuid(),
-      title: 'Take out the trash',
+      title: 'Assess your data for the latest  attacks',
       completed: false
     },
     {
       id: uuid(),
-      title: 'Dinner with wife',
+      title: 'Assess your data for emerging threats',
       completed: false
     },
     {
       id: uuid(),
-      title: 'Meeting with boss',
+      title: 'Automate Data Collection',
       completed: false
     },
   ]);

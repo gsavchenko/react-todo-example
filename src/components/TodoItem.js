@@ -28,9 +28,9 @@ function TodoItem(props) {
 }
 
 const deleteButton = {
-  border: '3px solid #FE53BB',
-  color: '#FE53BB',
-  backgroundColor: '#a00161',
+  border: '1px solid #E70000',
+  color: '#fff',
+  backgroundColor: '#430000',
   cursor: 'pointer',
   float: 'right'
 };
