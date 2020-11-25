@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import Todos from './components/Todos';
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import { v4 as uuid } from 'uuid';
+import About from './components/About';
 
 function App() {
   const [todos, setTodo] = useState([
@@ -47,15 +49,22 @@ function App() {
   }
 
   return (
-    <div>
-      <Header/>
-      <AddTodo
-        addTodo={addTodo}/>
-      <Todos
-        todos={todos}
-        toggleComplete={toggleComplete}
-        deleteTodo={deleteTodo}/>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header/>
+        <Route exact path="/" render={props => (
+          <React.Fragment>
+            <AddTodo
+              addTodo={addTodo}/>
+            <Todos
+              todos={todos}
+              toggleComplete={toggleComplete}
+              deleteTodo={deleteTodo}/>
+          </React.Fragment>
+        )} />
+        <Route path="/about" component={About} />
+      </div>
+    </BrowserRouter>
   );
 }
 
